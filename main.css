@@ -1,0 +1,263 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.cont {
+    position: relative;
+    width: 460px;
+    height: 160px;
+    margin: 2em auto;
+    overflow: hidden;
+}
+
+.animation {
+    position: relative;
+    width: 460px;
+    height: 160px;
+    background: url("2gis-anim/images/bg.png") no-repeat 50% 100%;
+    background-size: 95%;
+    overflow: hidden;
+    animation: invisible 2s linear 12s forwards;
+}
+
+
+.policeman {
+    position: relative;
+    top: 37px;
+    left: 365px;
+    height: 110px;
+    width: 40px;
+    background: url("2gis-anim/images/policman.png")no-repeat;
+    z-index: 2;
+}
+
+.policeman-big {
+    position: relative;
+    top: -140px;
+    left: 250px;
+    height: 160px;
+    width: 110px;
+    background: url("2gis-anim/images/policmen.png")no-repeat;
+    background-size: 90%;
+    opacity: 0;
+    animation: invisible 2s forwards 13s reverse, invisible 2s forwards 18s;
+}
+
+.policeman-big::before {
+    content: "";
+    font-size: 10px;
+    font-weight: 600;
+    text-align: justify;
+    background: url("2gis-anim/images/voice.png") no-repeat 50% 50%;
+    width: 110px;
+    height: 60px;
+    right: 90px;
+    top: -10px;
+    position: absolute;
+    opacity: 0;
+    animation: invisible 5s forwards 15s;
+    z-index: 3;
+}
+
+.policeman-big::after {
+    content: "Счастливого пути!";
+    font-size: 10px;
+    font-weight: 600;
+    text-align: center;
+    width: 70px;
+    height: 25px;
+    right: 120px;
+    top: 5px;
+    position: absolute;
+    opacity: 0;
+    animation: invisible 5s forwards 15s;
+    z-index: 3;
+}
+
+
+.animation::after {
+    content: "";
+    background: url("2gis-anim/images/fly.png") no-repeat 50% 50%;
+    width: 20px;
+    top: 50px;
+    left: 50px;
+    height: 20px;
+    position: absolute;
+    opacity: 0.8;
+    animation: fly 20s linear forwards;
+}
+
+.animation:before {
+    content: "";
+    position: absolute;
+    width: 81px;
+    height: 72px;
+    left: 2em;
+    top: 2.5em;
+    background: url("2gis-anim/images/crown tree.png")no-repeat 50% 50%;
+    z-index: 2;
+}
+
+.light {
+    background: url("2gis-anim/images/ligths.png") no-repeat;
+    position: absolute;
+    left: 260px;
+    top: -15px;
+    height: 231px;
+    width: 56px;
+    transform: scale(0.7);
+    z-index: 2;
+}
+
+.light::before {
+    content: "";
+    position: absolute;
+    background: url("2gis-anim/images/bird-in-light.png") no-repeat 100% 50%;
+    width: 20px;
+    height: 20px;
+    top: -17px;
+    left: 2px;
+    transform: scale(-0.8, 0.8);
+    animation: bird-second 2s infinite steps(1, start) -1s;
+}
+
+.three-lights {
+    position: relative;
+    top: -13px;
+    left: -36px;
+    padding: 0;
+    width: 50px;
+    text-align: center;
+}
+
+ul {
+    list-style: none;
+    display: inline-block;
+}
+
+li {
+    margin-top: 5px;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: transparent;
+    box-shadow: inset 2px 2px 4px rgba(0,0,0,.4), inset -2px -2px 4px rgba(255,255,255,.6);
+}
+
+.three-lights li:nth-of-type(1) {
+    margin-bottom:5px;
+    animation: traffic 4s backwards;
+}
+.three-lights li:nth-of-type(2) {
+    margin-bottom: 5px;
+    animation: traffic1 4s backwards 4s;
+}
+.three-lights li:nth-of-type(3) {animation: traffic2 4s forwards 8s;}
+
+.text-main {
+    position: relative;
+    text-align: center;
+}
+.text {
+    position: absolute;
+    font-weight: normal;
+    font-size: 20px;
+    width: 300px;
+    height: 30px;
+    text-shadow: 0 0 20px transparent;
+    color: transparent;
+    top: -100px;
+    right: 100px;
+}
+
+.text-first {animation: animation-first 4s ease-in 1s;}
+
+.text-second {animation: animation-second 4s ease-in 5s;}
+
+.text-third {animation: animation-third 4s both 9s;}
+
+.blink {
+    background: transparent;
+    position: absolute;
+    top: 74px;
+    left: 28px;
+    width: 13px;
+    height: 13px;
+    border-radius: 0 0 50% 50%;
+    overflow: hidden;
+}
+
+.blink::after {
+    content: '';
+    width: 5px;
+    height: 45px;
+    display: block;
+    background: rgba(255, 255, 255, 0.8);
+    right: -90px;
+    position: absolute;
+    top: -10px;
+    transform: rotate(35deg);
+    transition: all 0.5s ease;
+    animation: flare 5s linear backwards 15s;
+}
+
+
+
+@keyframes traffic-light {
+    0% {background: #3C4147;}
+    100% {background: none;}
+}
+
+@keyframes animation-first {
+    10% {text-shadow: 0 0px 1px #3C4147;}
+    60% {text-shadow: 0 0px 1px #3C4147;}
+    90% {text-shadow: 0 30px 40px transparent;}
+}
+
+@keyframes animation-second{
+    10% {text-shadow: 0 0px 1px #3C4147;}
+    60% {text-shadow: 0 0px 1px #3C4147;}
+    90% {text-shadow: 0 30px 40px transparent;}
+}
+
+@keyframes animation-third {
+    10% {text-shadow: 0 0px 2px #3C4147;}
+    60% {text-shadow: 0 0px 1px #3C4147;}
+    100% {text-shadow: 0 30px 40px transparent;}
+}
+
+@keyframes traffic {
+    100%{background: #FB000D;}
+}
+@keyframes traffic1 {
+    100%{background: #FED21D;}
+}
+@keyframes traffic2 {
+    100%{background: #7DFA04;}
+}
+
+@keyframes bird-second  {
+    0% {background-position: 100% 50%;}
+    50% {background-position: 0% 50%;}
+    100% {background-position: 100% 50%;}
+}
+
+@keyframes bird-first {
+    0% {background-position: -100% 50%;}
+    100% {background-position: 100% 50%;}
+}
+
+@keyframes fly {
+    0% {transform: translateX(500px);}
+    100% {transform: translateX(-500px);}
+}
+
+@keyframes invisible {
+    0% {opacity: 1;}
+    100% {opacity: 0;}
+}
+
+@keyframes flare {
+    0%   { left: -100px; }
+    100% { left: 70px; }
+}
